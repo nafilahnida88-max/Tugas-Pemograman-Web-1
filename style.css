@@ -1,0 +1,365 @@
+/* ==========================================
+   MODERN DARK NEON - STUDENT WEBSITE
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #0b1020;
+    --card: #151c30;
+    --card-hover: #1c2540;
+    --primary: #a78bfa;
+    --secondary: #67e8f9;
+    --text: #f1f5f9;
+    --muted: #a1a9bd;
+    --border: rgba(167, 139, 250, 0.22);
+    --glow: rgba(139, 92, 246, 0.18);
+}
+
+/* 1. Dasar halaman */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 35px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(124, 58, 237, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(6, 182, 212, 0.10),
+            transparent 30%
+        ),
+        var(--bg);
+
+    min-height: 100vh;
+}
+
+/* 2. Judul */
+h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--primary);
+    letter-spacing: -1px;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 28px;
+}
+
+h3 {
+    color: var(--secondary);
+    font-size: 19px;
+}
+
+p {
+    color: var(--muted);
+    margin: 12px 0;
+}
+
+/* 3. Garis */
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--primary),
+        var(--secondary),
+        transparent
+    );
+    margin: 25px 0;
+}
+
+/* 4. Gambar profil */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 18px;
+    border: 2px solid var(--border);
+    box-shadow: 0 0 25px var(--glow);
+    object-fit: cover;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 32px rgba(167, 139, 250, 0.3);
+}
+
+/* 5. Link */
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* 6. Daftar */
+ul, ol {
+    padding-left: 28px;
+}
+
+li {
+    color: var(--muted);
+    padding: 3px 0;
+}
+
+li::marker {
+    color: var(--primary);
+}
+
+/* 7. Tabel modern */
+table {
+    width: 100%;
+    margin: 22px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+
+    background: rgba(21, 28, 48, 0.92);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+caption {
+    color: var(--secondary);
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+th {
+    background: linear-gradient(
+        135deg,
+        #6d28d9,
+        #4338ca
+    );
+    color: #ffffff;
+    padding: 14px 12px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+td {
+    color: #dbe4f4;
+    padding: 12px;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.12);
+    border-right: 1px solid rgba(167, 139, 250, 0.08);
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(167, 139, 250, 0.055);
+}
+
+tbody tr {
+    transition: background 0.25s ease;
+}
+
+tbody tr:hover {
+    background: rgba(103, 232, 249, 0.10);
+}
+
+/* 8. Formulir */
+form {
+    max-width: 620px;
+    margin: 30px auto;
+    padding: 30px;
+
+    background: rgba(21, 28, 48, 0.90);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25),
+        0 0 25px var(--glow);
+}
+
+label {
+    display: inline-block;
+    margin: 10px 0 5px;
+    color: #ddd6fe;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 9. Input, pilihan dan textarea */
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="file"]),
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 5px 0 14px;
+
+    color: var(--text);
+    background: #0e1528;
+    border: 1px solid #343d59;
+    border-radius: 10px;
+
+    font: inherit;
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #77819a;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.14);
+}
+
+select option {
+    background: #151c30;
+    color: white;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--primary);
+    margin-right: 7px;
+}
+
+input[type="file"] {
+    display: block;
+    max-width: 100%;
+    margin: 12px 0;
+    color: var(--muted);
+}
+
+/* 10. Tombol */
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    padding: 12px 23px;
+    margin: 8px 6px 0 0;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+button,
+input[type="submit"] {
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #4f46e5
+    );
+    box-shadow: 0 5px 18px rgba(124, 58, 237, 0.2);
+}
+
+input[type="reset"],
+input[type="button"] {
+    color: var(--text);
+    background: #27314a;
+    border-color: #3b4561;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px var(--glow);
+}
+
+/* 11. Efek animasi sederhana */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body > h1,
+body > h2,
+body > p,
+body > table,
+body > form,
+body > img {
+    animation: fadeIn 0.6s ease both;
+}
+
+/* 12. Tampilan HP */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 18px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 9px 8px;
+        white-space: nowrap;
+    }
+
+    form {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    button,
+    input[type="submit"],
+    input[type="reset"] {
+        padding: 10px 16px;
+    }
+}
